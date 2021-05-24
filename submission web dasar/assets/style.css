@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+   margin: 0;
+   padding:0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+   background-color: #ebebeb;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+}
+
+main {
+   padding: 20px;
+   overflow: auto;
+}
+
+.jumbotron {
+   font-size: 20px;
+   padding: 80px;
+   /* background-color: #911e24; */
+   background-image:url(/idcamp/submission/assets/img/jumbotronbg2.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   text-align: center;
+   color: white;
+}
+.jumbotron p{
+    color: white;
+}
+header {
+   display: inline;
+   color: #797979;
+}
+ @media screen and (max-width: 576px) {
+    .jumbotron h1, .jumbotron p{
+       display: none;
+   } 
+}
+
+/* Navbar */
+
+.logo{
+    display: none;
+}
+nav{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: darkgoldenrod;
+    justify-content: space-around;
+    padding: 20px 0;
+    font-size: 20px;
+    color: white;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-between;
+    z-index: -1;
+}
+.logo{
+  z-index: 2;
+  margin-left:-40px;
+}
+.peradaban{
+    font-size: 10px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+nav ul li a:hover{
+    color: rgb(221, 186, 98);
+}
+
+/* hamburger */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    margin-top: 6px;
+    margin-right: -60px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 50px;
+    height: 28px;
+    left: -15px;
+    top: -3px;
+    opacity: 0;
+    z-index: 0;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+}
+     
+/* Responsive breakpoint */
+@media screen and (max-width: 1080px) {
+    nav ul{
+        /* width: 80%; */
+        text-align: justify;
+    }
+}
+/* tablet */
+@media screen and (max-width: 768px) {
+    nav ul{
+        /* width: 60%; */
+        text-align: justify;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    .logo{
+        display: flex;
+    }
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: darkgoldenrod;
+        z-index: 0;
+        transform: translateX(100%);
+        transition: all 0.5s;
+    }
+}
+
+nav ul.slide{
+    transform: translateX(0);
+}
+/* Responsive breakpoint end */
+
+#sejarah, #geografis{
+    margin-right: 25px;
+    padding: 90px 50;
+ }
+
+#geografis img{
+    width: 300px;
+ }
+
+@media screen and (max-width: 576px) {
+    #geografis img{
+       width: 250px;
+    }
+ }
+
+@media screen and (max-width: 576px) {
+   #sejarah, #geografis{
+      margin-right: 0px;
+   }
+}
+
+#univ{
+    text-align: center;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  
+#univ, td, th {
+    border: 1px solid #bbbbbb;
+    color: rgb(121, 121, 121);
+    padding: 5px;
+  }
+
+#content {
+   float: left;
+   width: 75%;
+}
+aside {
+   float: right;
+   width: 25%;
+}
+@media screen and (max-width: 1000px) {
+   #content,
+   aside {
+       width: 100%;
+       padding: 0;
+   }
+}
+
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   color: rgb(121, 121, 121);
+   border-radius: 5px;
+   background-color: white;
+   padding: 90px 50px;
+   margin-top: 20px;
+}
+
+.card #demografi, #pemerintahan, #wisata{
+    padding-top: 80px;
+ }
+
+.profile, header {
+   text-align: center;
+}
+
+.profile td, th {
+    border: 0px;
+    color: rgb(121, 121, 121);
+  }
+
+.featured-image {
+   width: 90%;
+   /* max-height: 500px; */
+   object-fit: cover;
+   object-position: center;
+}
+
+.profile img {
+   width: 200px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: darkgoldenrod
+}
